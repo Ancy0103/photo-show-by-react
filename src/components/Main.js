@@ -151,8 +151,8 @@ class AppComponent extends React.Component {
       topImgSpliceIndex = Math.ceil(Math.random() * (imgsArrangeArr.length - topImgNumber));
       imgsArrangeTopArr = imgsArrangeArr.splice(topImgSpliceIndex,topImgNumber);
       // 布局位于上部的图片
-      imgsArrangeTopArr.forEach((item, index) => {
-        item = {
+      imgsArrangeTopArr.forEach(item => {
+        imgsArrangeTopArr[item] = {
           pos: {
             top: getRangeRandom(vPosRangeTop[0], vPosRangeTop[1]),
             left: getRangeRandom(vPosRangeX[0], vPosRangeX[1])
@@ -195,10 +195,10 @@ class AppComponent extends React.Component {
         halfStageW = Math.ceil(stageW/2),
         halfStageH = Math.ceil(stageH/2);
     // 获取imgFigure大小
-    let imgFigureDom = ReactDOM.findDOMNode(this.refs.imgFigure0),
+    // let imgFigureDom = ReactDOM.findDOMNode(this.refs.imgFigure0),
         // imgW = imgFigureDom.scrollWidth,
         // imgH = imgFigureDom.scrollHeight,
-        imgW = 290,
+    let imgW = 290,
         imgH = 400,
         halfImgW = Math.ceil(imgW/2),
         halfImgH = Math.ceil(imgH/2);
@@ -234,7 +234,7 @@ class AppComponent extends React.Component {
           },
           rotate: 0,
           isInverse: false,
-          isCenter: false,
+          isCenter: false
         }
       }
       imgFigures.push(<ImgFigure data={item} key={index} ref={'imgFigure'+ index} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)}/>)
