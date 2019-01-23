@@ -82,7 +82,7 @@ class ControllerUnit extends React.Component {
     e.preventDefault;
   };
   render() {
-    let controllerUnitClassName = "controller-unit",
+    let controllerUnitClassName = 'controller-unit',
     iconClass = '';
     // 如果对应的是居中的图片，显示控制按钮的居中态
     if (this.props.arrange.isCenter) {
